@@ -17,7 +17,7 @@ use Plack::Middleware::OAuth::Handler::AccessTokenV2;
 use DateTime;
 use feature qw(switch say);
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 # routes cache
 #    path => { provider => ... , method => .... }
@@ -113,7 +113,6 @@ sub call {
 	$res = $self->app->( $env );
 	return $res;
 }
-
 
 sub request_token {
 	my ($self,$env,$provider) = @_;  # env and provider id
@@ -322,6 +321,18 @@ Github uses OAuth 2.0, and the access token callback returns data like this:
         access_token: {{string}}
         token_type: bearer
     provider: Github
+    version: 2
+
+Google returns:
+
+    ---
+    params:
+        access_token: {{string}}
+        code: {{string}}
+        expires_in: 3600
+        refresh_token: {{string}}
+        token_type: Bearer
+    provider: Google
     version: 2
 
 =head1 Supported Providers

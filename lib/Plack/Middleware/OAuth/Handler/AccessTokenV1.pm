@@ -1,5 +1,7 @@
 package Plack::Middleware::OAuth::Handler::AccessTokenV1;
 use parent qw(Plack::Middleware::OAuth::Handler);
+use warnings;
+use strict;
 use URI;
 use URI::Query;
 use LWP::UserAgent;
@@ -40,9 +42,6 @@ sub run {
         oauth_verifier => $self->param('oauth_verifier'),
     });
 
-	warn $response->token;
-	warn $self->param('oauth_token');
-
     my $request = Net::OAuth->request( 'access token' )->new( $self->build_args );
     $request->sign;
 
@@ -77,9 +76,5 @@ sub run {
 
 	return $self->to_yaml( $oauth_data );
 }
-
-1;
-use warnings;
-use strict;
 
 1;
