@@ -17,21 +17,20 @@ lib/Plack/Middleware/OAuth.pm
 lib/Plack/Middleware/OAuth/AccessToken.pm
 lib/Plack/Middleware/OAuth/Facebook.pm
 lib/Plack/Middleware/OAuth/GenericHandler.pm
-lib/Plack/Middleware/OAuth/Github.pm
+lib/Plack/Middleware/OAuth/GitHub.pm
 lib/Plack/Middleware/OAuth/Google.pm
 lib/Plack/Middleware/OAuth/Handler.pm
 lib/Plack/Middleware/OAuth/Handler/AccessTokenV1.pm
 lib/Plack/Middleware/OAuth/Handler/AccessTokenV2.pm
 lib/Plack/Middleware/OAuth/Handler/RequestTokenV1.pm
 lib/Plack/Middleware/OAuth/Handler/RequestTokenV2.pm
+lib/Plack/Middleware/OAuth/Twitter.pm
 lib/Plack/Middleware/OAuth/UserInfo.pm
+lib/Plack/Middleware/OAuth/UserInfo/GitHub.pm
+lib/Plack/Middleware/OAuth/UserInfo/Google.pm
 lib/Plack/Middleware/OAuth/UserInfo/Twitter.pm
 MANIFEST			This list of files
 MANIFEST.SKIP
-META.yml
-MYMETA.json
-MYMETA.yml
-pm_to_blib
 README
 README.mkdn
 t/00-load.t
@@ -41,4 +40,3 @@ t/01-token.t
 t/basic.psgi
 t/manifest.t
 t/pod-coverage.t
-Makefile.PL
