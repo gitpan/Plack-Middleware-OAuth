@@ -4,15 +4,6 @@ Changes
 eg/app.psgi
 eg/providers.yml
 ignore.txt
-inc/Module/Install.pm
-inc/Module/Install/Base.pm
-inc/Module/Install/Can.pm
-inc/Module/Install/Fetch.pm
-inc/Module/Install/Metadata.pm
-inc/Module/Install/ReadmeMarkdownFromPod.pm
-inc/Module/Install/Win32.pm
-inc/Module/Install/WriteAll.pm
-inc/Pod/Markdown.pm
 lib/Plack/Middleware/OAuth.pm
 lib/Plack/Middleware/OAuth/AccessToken.pm
 lib/Plack/Middleware/OAuth/Facebook.pm
@@ -29,8 +20,10 @@ lib/Plack/Middleware/OAuth/UserInfo.pm
 lib/Plack/Middleware/OAuth/UserInfo/GitHub.pm
 lib/Plack/Middleware/OAuth/UserInfo/Google.pm
 lib/Plack/Middleware/OAuth/UserInfo/Twitter.pm
-MANIFEST			This list of files
+lib/Plack/Middleware/OAuth/UserInfo/Facebook.pm
+MANIFEST
 MANIFEST.SKIP
+META.yml
 README
 README.mkdn
 t/00-load.t
@@ -40,3 +33,4 @@ t/01-token.t
 t/basic.psgi
 t/manifest.t
 t/pod-coverage.t
+Makefile.PL

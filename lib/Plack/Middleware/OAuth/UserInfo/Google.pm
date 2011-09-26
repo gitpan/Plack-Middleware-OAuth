@@ -11,11 +11,12 @@ sub query {
     my $ua = LWP::UserAgent->new;
     my $uri = URI->new( 'https://www.google.com/m8/feeds/contacts/default/full' );
     $uri->query_form( 
-        'access_token' => $token->access_token ,
+        'access_token' => $self->token->access_token ,
         'max-results' => 0,
         'alt'=> 'json',
     );
     my $res = $ua->get($uri);
+    warn $res->decoded_content;
     return JSON::Any->new->decode($res->decoded_content) if $res->is_success;
 }
 

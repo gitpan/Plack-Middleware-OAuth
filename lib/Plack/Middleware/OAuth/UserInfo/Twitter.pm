@@ -21,13 +21,12 @@ sub create_handle {
 
 sub query {
     my $self = shift;
-
     # get twitter user infomation with (api)
     my $twitter = $self->create_handle;
 
 #   account_settings => $twitter->account_settings,
 #   account_totals => $twitter->account_totals,
-    return $twitter->show_user( $self->token->params->{extra_params}->{screen_name} )
+    return $twitter->show_user( $self->token->extra->{screen_name} )
 }
 
 1;
