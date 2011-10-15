@@ -18,7 +18,7 @@ use Plack::Middleware::OAuth::Handler::AccessTokenV2;
 use DateTime;
 use feature qw(switch say);
 
-our $VERSION = '0.09';
+our $VERSION = '0.091';
 
 # routes cache
 #    path => { provider => ... , method => .... }
@@ -409,10 +409,15 @@ You can get OAuth1 or OAuth2 access token from L<Plack::Session>,
 
     my $session = Plack::Session->new( $env );
     $session->get( 'oauth.twitter.access_token' );
-    $session->get( 'oauth.twitter.access_token_secret' );
+    $session->get( 'oauth.twitter.access_token_secret' );  # OAuth version
 
-    $session->get( 'oauth2.facebook.access_token' );
-    $session->get( 'oauth2.custom_provider' );
+    $session->get( 'oauth.facebook.access_token' );
+    $session->get( 'oauth.facebook.version' );   # OAuth version
+
+Custom provider:
+
+    $session->get( 'oauth.custom_provider.access_token' );
+    $session->get( 'oauth.custom_provider.version' );
 
 
 =head1 Supported Providers
@@ -511,5 +516,9 @@ Google OAuth Scope:
 L<http://code.google.com/apis/gdata/faq.html#AuthScopes>
 
 =back
+
+=head2 Contributors
+
+RsrchBoy
 
 =cut

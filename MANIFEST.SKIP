@@ -1,7 +1,6 @@
-tmp
 eg/app.psgi.dev
 .git
 blib/
 private/
-Makefile
-inc/
+tmp
+pm_to_blib
